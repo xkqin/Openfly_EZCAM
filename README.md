@@ -1,7 +1,9 @@
-# Photo preference survey
+# Openfly_EZCAM
 
-Public participant entry: https://openfly.art/survey/
+Project website repository for https://openfly.art/. The domain root is intended for the future Openfly EZCAM project homepage.
 
-GitHub Pages serves the public questionnaire and photos at both the domain root and `/survey/`. The previous https://xkqin.github.io/survey/ entry redirects to the custom domain. Anonymous responses are saved by the existing Railway service. There are no answer keys, private study mappings, administrator credentials or collected responses in this repository.
+The photo preference survey is a temporary subpage at https://openfly.art/survey/. During the initial migration, the root also displays the survey; it can be replaced by the project homepage. Retiring the survey later must preserve its historical responses and answer archive in Railway.
 
-Append `?test=1` for test responses, which are excluded from formal results.
+GitHub Pages hosts the public pages and photos. Anonymous survey responses are saved by the existing Railway service. There are no answer keys, private study mappings, administrator credentials or collected responses in this repository.
+
+Append `?test=1` to the survey URL for test responses, which are excluded from formal results.
