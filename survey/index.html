@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>哪张更好看 · Which photo is better</title>
+<style>
+  :root { color-scheme: dark; --bg: #000; --fg: #f5f5f7; --fg2: #aeaeb2; --line: #2c2c2e; --accent: #ffd60a; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.5 -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif; }
+  main { max-width: 1400px; margin: 0 auto; padding: 24px 16px 40px; min-height: 100vh; display: flex; flex-direction: column; }
+  h1 { font-size: clamp(24px, 3.4vw, 36px); margin: 8px 0 4px; font-weight: 700; letter-spacing: -0.01em; }
+  .sub { color: var(--fg2); margin: 0 0 18px; }
+  .bar { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; margin: 6px 0 18px; }
+  .bar i { display: block; height: 100%; width: 0; background: var(--accent); transition: width .25s; }
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; flex: 1; align-content: start; }
+  .pair button { all: unset; cursor: pointer; border-radius: 14px; overflow: hidden; background: #111; outline: 3px solid transparent;
+                 transition: outline-color .12s, transform .12s; aspect-ratio: 640 / 544; }
+  .pair button:hover, .pair button:focus-visible { outline-color: var(--fg2); }
+  .pair button.picked { outline-color: var(--accent); transform: scale(.985); }
+  .pair img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .row { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 16px; color: var(--fg2); font-size: 14px; }
+  .center { margin: auto; text-align: center; max-width: 640px; }
+  .start { all: unset; cursor: pointer; margin-top: 22px; padding: 12px 34px; border-radius: 999px; background: var(--fg); color: #000; font-weight: 650; font-size: 17px; }
+  .muted { color: var(--fg2); font-size: 14px; }
+  @media (max-width: 700px) { .pair { grid-template-columns: 1fr; gap: 12px; } .row { flex-direction: column-reverse; } }
+  button:disabled { cursor: wait; }
+  .retry { cursor:pointer; background:#f5f5f7; color:#000; border:0; border-radius:999px; padding:7px 16px; }
+</style>
+</head>
+<body>
+<main id="app">
+  <div class="center" id="intro">
+    <h1>哪张照片拍得更好？</h1>
+    <p class="sub">Which photo is better?</p>
+    <p>每次给你两张照片，点你觉得拍得更好的那张。<br>一共 <span id="pair-n">15</span> 对，大约 1 分钟。请选择你更喜欢的一张。</p>
+    <p class="muted">Click the photo you find better. <span id="pair-n-en">15</span> pairs, about 1 minute. Choose the photo you prefer.</p>
+    <button class="start" id="go">开始 · Start</button>
+    <p class="muted" id="msg"></p>
+  </div>
+</main>
+<script src="../config.js" defer></script>
+<script src="../app.js" defer></script>
+</body>
+</html>
